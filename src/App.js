@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import users from './user-directory/data'
+import Slides from './components/Slides'
+import Buttons from './components/Buttons'
+import PageCounter from './components/PageCounter'
 
-function App() {
-  return (
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state={
+      users: users,
+      currentUser: 0
+    }
+    this.nextUser = this.nextUser.bind(this)
+    this.backUser = this.backUser.bind(this)
+  }
+
+  nextUser(){
+    if (this.state.currentUser < this.state.users.length - 1) {
+      this.setState({currentUser: this.state.currentUser + 1});
+    } 
+     else if (this.state.currentUser === this.state.users.length -1){
+      this.setState({currentUser: 0})
+    }
+  }
+  backUser(){
+    if (this.state.currentUsers.length > 0) {
+      this.setState({currentUser: this.state.currentUser - 1});
+    }
+    else if (this.state.currentUser === 0){
+      this.setState({currentUser: this.state.users.length - 1})
+    }
+  }
+  
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='header'>
+        <div className='homeButton'>Home</div>
+      </div>
+      <div className='content'>
+        <PageCounter 
+        userArr={this.state.users} 
+        currentUser={this.state.currentUser}
+        />
+        <Slides user={this.state.users[this.state.currentUser]}/>
+        <Buttons 
+          currentUser={this.state.currentUser} 
+          nextUserFn={this.nextUser} 
+          backUserFn={this.backUser}
+        />
+      </div>
     </div>
-  );
+   )
+  }
 }
 
-export default App;
+export default App

@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
+  background-color:goldenrod;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background-color:rgb(52, 165, 218);
+  width: 100%;
+  height: 10%;
+}
+.homeButton {
+  margin-left: 60px;
+  width: 10%;
+  height: 100%;
+  line-height: 70px;
+  background-color: aliceblue;
+}
+.content {
+background-color: rgb(34,34,34);
+width: 100%;
+height: 90%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slides {
+  background-color: lightgray;
+  width: 80%;
+  height: 80%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.blueLine {
+  background-color: rgb(52, 165, 218);
+  width: 250px;
+  height: 4px;
+  position: relative;
+  bottom: 36px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  margin-left: 100px;
+  margin-top: 50px;
+  line-height: 40px;
+}
+
+.buttons {
+  /* background-color: #787; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 80%;
+  height: 6%;
 }
 
-.App-link {
-  color: #61dafb;
+.previous {
+  /* background-color: #5ff; */
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edits {
+  /* background-color: #44f; */
+  flex: 2;
+}
+
+.next {
+  /* background-color: #ff1; */
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.from {
+  display: inline;
+
+}
+
+h4 {
+  display:inline;
+}
+p {
+  display: inline;
+  margin-top: 20px;
+}
+
+.movieList {
+  margin-left: 30px;
+}
+
+.pagecounter {
+  color: black;
+  position: absolute;
+  top: 150px;
+  right: 200px;
+}
+
+.navbuttons {
+  width: 90px;
+  height: 40px;
+  border-style: none;
+  background-color: rgb(34,34,34);
+  color: #fff;
 }
