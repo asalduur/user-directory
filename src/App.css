@@ -1,9 +1,11 @@
+/* you don't actually see this background color as it is being overlayed with the header and content div. it takes up the entire device viewport*/
+
 .App {
-  background-color:goldenrod;
+  background-color:goldenrod; 
   width: 100vw;
   height: 100vh;
 }
-
+/* width set to 100vw, takes up entire width of page. but it's height is only 10% of the page */
 .header {
   background-color:rgb(52, 165, 218);
   width: 100%;
@@ -16,6 +18,7 @@
   line-height: 70px;
   background-color: aliceblue;
 }
+/* this parent div element is set to flex and given the column direction so it runs up and down. takes up the rest of what the header doesn't cover, 90%*/
 .content {
 background-color: rgb(34,34,34);
 width: 100%;
@@ -25,7 +28,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-
+/* this div is the child of content, takes up 80% of content div 90% width */
 .slides {
   background-color: lightgray;
   width: 80%;
@@ -47,21 +50,21 @@ align-items: center;
   margin-top: 50px;
   line-height: 40px;
 }
-
+/* this is a div that runs under slide div, it is displaying buttons for next, previous and edits */
 .buttons {
   /* background-color: #787; */
   display: flex;
   width: 80%;
   height: 6%;
 }
-
+/* this inside buttons div, it is set to flex 1 so it takes up 1-2 ratio */
 .previous {
   /* background-color: #5ff; */
   flex: 1;
   display: flex;
   justify-content: flex-start;
 }
-
+/* this flex set to 2 takes up the greatest ratio of the buttons div */
 .edits {
   /* background-color: #44f; */
   flex: 2;
